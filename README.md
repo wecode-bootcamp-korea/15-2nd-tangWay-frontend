@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+## 프로젝트 소개 ✈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 프로젝트 기간 : 2020.12.28 ~ 2021.01.08
 
-## Available Scripts
+### Front-End 기술 스택
 
-In the project directory, you can run:
+- HTML
+- React(CRA)
+- Sass
+- Redux
 
-### `yarn start`
+### Back-End 기술 스택
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Python
+- Django
+- MySQL
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 협업 도구
 
-### `yarn test`
+- GitHub
+- Slack : 비대면 소통
+- Trello : 일정관리 및 작업 현황 공유
+- Notion : 팀 내 개발 자료, 규칙, 안건등 기록
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 프로젝트 참가자 GitHub 주소링크
 
-### `yarn build`
+### Front-End
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 최용석 (PM)
+- 임대호
+- 김찬영
+- 강경오
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Back-End
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 문승희
+- 최선우
 
-### `yarn eject`
+### Front-End
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+회원가입
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+로그인(소셜 로그인), 나의 예약 /  메인, 로딩  /  항공권 예매(2명)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Back-End
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+초기세팅
 
-## Learn More
+회원가입
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+로그인(소셜 로그인)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Aquery Tool을 이용한 ERD 작성
 
-### Code Splitting
+Modeling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Trello
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[https://trello.com/invite/b/e1Zg32hl/e92494087b735ed19248012ac0175b0d/tangway](https://trello.com/invite/b/e1Zg32hl/e92494087b735ed19248012ac0175b0d/tangway)
