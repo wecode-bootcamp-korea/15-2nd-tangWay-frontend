@@ -1,3 +1,4 @@
 import { combineReducers } from "redux";
+import bookingReducer from "./bookingReducer";
 
-export default combineReducers({});
+export default combineReducers({ bookingReducer });
