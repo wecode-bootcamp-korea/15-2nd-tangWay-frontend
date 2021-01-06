@@ -23,7 +23,6 @@ export default function SignupLayout(props) {
         <button className="nextBtn" onClick={props.sendUserData}>
           다음
         </button>
-        {/* <button className="nextBtn">다음</button> */}
       </div>
     </div>
   );
