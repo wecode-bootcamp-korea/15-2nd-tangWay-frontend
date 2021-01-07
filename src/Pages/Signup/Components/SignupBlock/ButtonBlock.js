@@ -2,7 +2,14 @@ import React from "react";
 import Button from "./Button";
 import BirthMenu from "./BirthMenu";
 
-export default function ButtonBlock({ handleClick, makeBirthday, makeBigArr, maleClicked, femaleClicked }) {
+export default function ButtonBlock({
+  handleClick,
+  makeBirthday,
+  makeBigArr,
+  maleClicked,
+  femaleClicked,
+  checkEmailId,
+}) {
   return (
     <ul className="ButtonBlock">
       <li>
@@ -17,6 +24,7 @@ export default function ButtonBlock({ handleClick, makeBirthday, makeBigArr, mal
                 name={el.name}
                 maleClicked={maleClicked}
                 femaleClicked={femaleClicked}
+                checkEmailId={checkEmailId}
               />
             );
           })}

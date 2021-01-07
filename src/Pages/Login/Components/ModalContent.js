@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import theme from "../../../Styles/theme";
 import { modalButtonData } from "../Data/Data";
-// import { ModalButton } from "./Button";
 
 export default function ModalContent({ setModalState }) {
   return (

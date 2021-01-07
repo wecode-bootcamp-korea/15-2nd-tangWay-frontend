@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import theme from "../../Styles/theme";
 import { KakaoLoginApi, LoginApi } from "../../config";
@@ -14,6 +15,8 @@ function Login() {
   const [userPw, setUserPw] = useState("");
   const [checkClicked, setCheckClicked] = useState(false);
 
+  const dispatch = useDispatch();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     e.preventDefault();
@@ -23,7 +26,6 @@ function Login() {
   const socialLogin = () => {
     Kakao.Auth.login({
       success: function (authObj) {
-        alert("success");
         fetch(KakaoLoginApi, {
           method: "POST",
           headers: {
@@ -37,8 +39,9 @@ function Login() {
               alert("로그인 성공!");
               history.push("/");
             } else {
+              dispatch({ type: "ADD_DATA", payload: res });
               alert("추가 회원 정보가 필요합니다.");
-              history.push("/signup");
+              history.push("/Signup");
             }
           });
       },

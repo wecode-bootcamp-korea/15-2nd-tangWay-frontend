@@ -86,7 +86,14 @@ function SignUp() {
     const { name } = e.target;
     e.preventDefault();
     setUserGender(name);
-    name === "male" ? setMaleClicked(!maleClicked) : setFemaleClicked(!femaleClicked);
+    if (name === "male") {
+      setMaleClicked(true);
+      setFemaleClicked(false);
+    }
+    if (name === "female") {
+      setMaleClicked(false);
+      setFemaleClicked(true);
+    }
   };
 
   const checkIdValidation = (userEmailId) => {
@@ -127,6 +134,7 @@ function SignUp() {
             makeBigArr={makeBigArr}
             maleClicked={maleClicked}
             femaleClicked={femaleClicked}
+            checkEmailId={checkEmailId}
           />
         </ul>
       </form>

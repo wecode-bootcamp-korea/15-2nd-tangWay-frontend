@@ -1,14 +1,1 @@
-{
-  "user_info": [
-    {
-      "email": "kyungohkang126@mgmail.com",
-      "password": "a123456789!",
-      "korean_name": "강경오",
-      "english_name": "kangkyungoh",
-      "gender": "male",
-      "date_of_birth": "1992-01-26",
-      "phone_number": "01032261026",
-      "country": "korea"
-    }
-  ]
-}
+[{"MESSAGE": "NOT_EXIST_USER", "EMAIL": "kyujeong1026@hotmail.com", "NAME": "강경오"}]
