@@ -86,7 +86,7 @@ const blockData = {
       inputData: {
         type: "text",
         name: "userPhoneNum",
-        placeholder: "전화번호를 입력하세요. (ex: 010-1234-5678)",
+        placeholder: "-를 제외한 전화번호를 입력하세요. (ex: 01012345678)",
       },
     },
   ],

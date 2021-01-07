@@ -18,12 +18,12 @@ export default function BoxForm({
   return (
     <>
       <InputWrapper>
-        {inputData.data.map((el, idx) => {
+        {inputData.data.map((input, idx) => {
           return (
             <Input
               key={idx}
-              name={el.name}
-              placeholder={el.text}
+              name={input.name}
+              placeholder={input.text}
               handleChange={handleChange}
               userId={userId}
               userPw={userPw}
@@ -32,45 +32,45 @@ export default function BoxForm({
         })}
       </InputWrapper>
       <SpanWrapper>
-        {spanData.rememberIdPw.map((el, idx) => {
+        {spanData.rememberIdPw.map((span, idx) => {
           return (
             <li key={idx}>
               <i
                 className="far fa-check-square"
-                id={el.name === "rememberId" ? (checkClicked ? "boxClicked" : el.name) : el.name}
+                id={span.name === "rememberId" ? (checkClicked ? "boxClicked" : span.name) : span.name}
                 onClick={() => setCheckClicked(!checkClicked)}
               />
-              <span name={el.name}>{el.text}</span>
+              <span name={span.name}>{span.text}</span>
             </li>
           );
         })}
       </SpanWrapper>
       <LoginButtonWrapper>
-        {buttonData.loginButton.map((el, idx) => {
-          return <Button key={idx} name={el.name} text={el.text} login={login} />;
+        {buttonData.loginButton.map((button, idx) => {
+          return <Button key={idx} name={button.name} text={button.text} login={login} />;
         })}
       </LoginButtonWrapper>
       <SpanWrapper>
-        {spanData.signUpIdPw.map((el, idx) => {
+        {spanData.signUpIdPw.map((span, idx) => {
           return (
-            <li key={idx} name={el.name} onClick={(e) => goToSignUpPage(e)}>
-              {el.text}
+            <li key={idx} name={span.name} onClick={(e) => goToSignUpPage(e)}>
+              {span.text}
             </li>
           );
         })}
       </SpanWrapper>
       <SocialWrapper>
         <h2>SNS 서비스 계정으로 로그인</h2>
-        {buttonData.socialButtons.map((el, idx) => {
+        {buttonData.socialButtons.map((button, idx) => {
           return (
             <Button
               key={idx}
-              name={el.name}
-              text={el.text}
-              imgSrc={el.icon}
+              name={button.name}
+              text={button.text}
+              imgSrc={button.icon}
               socialLogin={socialLogin}
-              socialButtonArr={buttonData.socialButtons.map((el) => {
-                return el.name;
+              socialButtonArr={buttonData.socialButtons.map((button) => {
+                return button.name;
               })}
             />
           );
