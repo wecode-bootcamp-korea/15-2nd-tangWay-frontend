@@ -4,6 +4,15 @@ import theme from "../../../Styles/theme";
 import { modalButtonData } from "../Data/Data";
 
 export default function ModalContent({ setModalState }) {
+  const logout = () => {
+    if (localStorage.getItem("access_token")) {
+      localStorage.removeItem("access_token");
+      alert("로그아웃 성공!");
+    } else {
+      alert("ㄴㄴ");
+    }
+  };
+
   return (
     <ModalContentTop>
       <CloseButton onClick={() => setModalState(false)}>x</CloseButton>
@@ -13,7 +22,12 @@ export default function ModalContent({ setModalState }) {
         <div>
           {modalButtonData.ModalButtons.map((el, idx) => {
             return (
-              <ModalButton key={idx} name={el.name} text={el.text}>
+              <ModalButton
+                key={idx}
+                name={el.name}
+                text={el.text}
+                onClick={el.name === "logoutBtn" ? logout : console.log("구현중")}
+              >
                 {el.text}
               </ModalButton>
             );

@@ -6,6 +6,7 @@ import theme from "../../Styles/theme";
 import { KakaoLoginApi, LoginApi } from "../../config";
 import BoxForm from "./Components/BoxForm";
 import CheckReservation from "./Components/CheckReservation";
+import LoginModal from "./LoginModal";
 
 const { Kakao } = window;
 
@@ -14,6 +15,7 @@ function Login() {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
   const [checkClicked, setCheckClicked] = useState(false);
+  const [modalState, setModalState] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -75,15 +77,17 @@ function Login() {
 
   const goToSignUpPage = (e) => {
     if (e.target.getAttribute("name") === "signup") {
+      alert("회원가입 페이지로 이동합니다.");
       history.push({
         pathname: "/Signup",
       });
     }
-    alert("moving to signup page");
   };
 
   return (
     <LoginBox>
+      <button onClick={() => setModalState(true)}>LoginModal</button>
+      <LoginModal modalState={modalState} setModalState={setModalState} />
       <Title>로그인</Title>
       <div className="loginTop">
         <span>회원 로그인</span>
