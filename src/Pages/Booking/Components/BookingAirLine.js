@@ -54,14 +54,14 @@ const AirLineWrap = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 const StepBookingContainer = styled.div`
   width: 70%;
-    ul {
-      display: flex;
-      justify-content: flex-end;
-      margin-left: 20px;
-      align-items: center;
-    }
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20px;
+    align-items: center;
   }
 `;
 

@@ -1,15 +1,19 @@
 import React from "react";
+import { useHistory } from "react-router";
 import styled from "styled-components";
 import theme from "../../../Styles/theme";
 import { modalButtonData } from "../Data/Data";
 
 export default function ModalContent({ setModalState }) {
+  const history = useHistory();
+
   const logout = () => {
     if (localStorage.getItem("access_token")) {
       localStorage.removeItem("access_token");
       alert("로그아웃 성공!");
+      history.push("/login");
     } else {
-      alert("ㄴㄴ");
+      history.push("/login");
     }
   };
 
@@ -26,7 +30,7 @@ export default function ModalContent({ setModalState }) {
                 key={idx}
                 name={el.name}
                 text={el.text}
-                onClick={el.name === "logoutBtn" ? logout : console.log("구현중")}
+                onClick={el.name === "logoutBtn" ? () => logout() : console.log("구현중")}
               >
                 {el.text}
               </ModalButton>

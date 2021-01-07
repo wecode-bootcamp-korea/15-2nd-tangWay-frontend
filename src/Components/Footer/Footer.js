@@ -8,8 +8,8 @@ function Footer() {
     <FooterLayout>
       <FooterTop>
         <SpanWrapper>
-          <RevCenter>티웨이항공 예약 센터</RevCenter>
-          <PhoneNum>1688 - 8686</PhoneNum>
+          <RevCenter>탕웨이 항공 예약 센터</RevCenter>
+          <PhoneNum>8888 - 8686</PhoneNum>
           <span>07:00 ~ 19:00</span>
         </SpanWrapper>
         <IconWrraper>
@@ -53,6 +53,7 @@ const FooterLayout = styled.div`
   border-top: 1px solid ${theme.backGroundGray};
   ${theme.flexcenter}
   flex-direction: column;
+  height: 460px;
 `;
 
 const FooterTop = styled.div`
@@ -101,7 +102,7 @@ const FooterMid = styled.div`
   width: 100%;
   height: 240px;
   ${theme.flexcenter}
-  background-color: ${theme.backGroundGray};
+  background-color: white;
 `;
 
 const Wrapper = styled.div`

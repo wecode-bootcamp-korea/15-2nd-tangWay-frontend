@@ -4,7 +4,6 @@ import BookingModal from "./Components/BookingModal/BookingModal";
 import Service from "./Components/Service";
 import Recommend from "./Components/Recommend/Recommend";
 import Notice from "./Components/Notice";
-import Footer from "../../Components/Footer/Footer";
 import styled from "styled-components";
 import { API } from "../../config";
 
@@ -26,7 +25,7 @@ function Main() {
   useEffect(() => {
     listMode === "Slide" ? setListMode("Slide") : setListMode("List");
   }, [listMode]);
-
+  console.log(data);
   return (
     <>
       {modal && <OpenModal />}
@@ -49,7 +48,6 @@ function Main() {
       <Service />
       <Recommend listMode={listMode} setListMode={setListMode} />
       <Notice />
-      <Footer />
     </>
   );
 }

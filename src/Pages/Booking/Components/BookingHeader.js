@@ -1,13 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
 import styled from "styled-components";
 import Booking from "../Booking";
 
 function BookingHeader() {
+  const history = useHistory();
+  const gotoMain = () => {
+    history.push("/");
+  };
+
   return (
     <Header>
       <HeaderContainer>
-        <HeaderLogo>
+        <HeaderLogo onClick={gotoMain}>
           <img src="./images/tang.png" alt="tomato" />
         </HeaderLogo>
         <BookingHeaderLists>
@@ -65,6 +71,7 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
 `;
 const HeaderLogo = styled.div`
+  cursor: pointer;
   img {
     width: 200px;
     height: 100px;

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
-import { setDestination, setDeparture } from "../../../../store/actions";
+import { setDestination, setDeparture, setDestinationID, setDepartureID } from "../../../../store/actions";
 
 function DestinationList({ data, setLayer, setOpenCalendar, activeID }) {
   const dispatch = useDispatch();
@@ -19,10 +19,14 @@ function DestinationList({ data, setLayer, setOpenCalendar, activeID }) {
                 departure
                   ? () => {
                       dispatch(setDestination(list.korean_name));
+                      dispatch(setDestinationID(list.airport_id));
                       setLayer(false);
                       setOpenCalendar(true);
                     }
-                  : () => dispatch(setDeparture(list.korean_name))
+                  : () => {
+                      dispatch(setDeparture(list.korean_name));
+                      dispatch(setDepartureID(list.airport_id));
+                    }
               }
             >
               {list.korean_name}

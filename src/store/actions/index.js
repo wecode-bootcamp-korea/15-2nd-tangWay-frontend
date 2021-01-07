@@ -39,3 +39,17 @@ export const setNumOfInfant = (number) => {
     payload: number,
   };
 };
+
+export const setDepartureID = (number) => {
+  return {
+    type: "SET_DEPARTURE_ID",
+    payload: number,
+  };
+};
+
+export const setDestinationID = (number) => {
+  return {
+    type: "SET_DESTINATION_ID",
+    payload: number,
+  };
+};
