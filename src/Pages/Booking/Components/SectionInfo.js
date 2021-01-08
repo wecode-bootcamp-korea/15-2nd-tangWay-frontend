@@ -10,10 +10,10 @@ const ITEM2 = {
   section: "구간2",
 };
 
-const SectionInfo = () => (
+const SectionInfo = ({ choose }) => (
   <ReservationSection>
-    <ReservationDetail item={ITEM1} />
-    <ReservationDetail item={ITEM2} />
+    <ReservationDetail item={ITEM1} choose={choose.first} />
+    <ReservationDetail item={ITEM2} choose={choose.second} />
   </ReservationSection>
 );
 

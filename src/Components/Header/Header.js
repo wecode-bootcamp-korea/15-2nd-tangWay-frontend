@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useHistory } from "react-router";
+import LoginModal from "../../Pages/Login/LoginModal";
 
 function Header() {
   const [category, setCategory] = useState([]);
-
+  const [modalState, setModalState] = useState(false);
+  const history = useHistory();
   useEffect(() => {
     fetch("/config/header.json")
       .then((res) => res.json())
       .then((res) => setCategory(res));
   }, []);
 
+  const gotoMain = () => {
+    history.push("/");
+  };
+
   return (
     <HeaderWrap>
       <div className="headerInner">
-        <LOGO alt="logo_image" src="./images/logo.png" />
+        <h2 onClick={gotoMain}>Tang Way</h2>
         <CategoryWrap>
           {category.menu &&
             category.menu.map((menu, idx) => {
@@ -25,13 +32,18 @@ function Header() {
               );
             })}
         </CategoryWrap>
+        <LoginModal modalState={modalState} setModalState={setModalState} />
         <UtilWrap>
           <div>
             <Language>한국</Language>
             <Language>한국어</Language>
           </div>
           <div>
-            <UtilImages src="https://www.flaticon.com/svg/static/icons/svg/929/929564.svg" alt="user" />
+            <UtilImages
+              src="https://www.flaticon.com/svg/static/icons/svg/929/929564.svg"
+              alt="user"
+              onClick={() => setModalState(!modalState)}
+            />
             <UtilImages src="https://www.flaticon.com/svg/static/icons/svg/54/54481.svg" alt="search" />
             <UtilImages src="https://www.flaticon.com/svg/static/icons/svg/633/633647.svg" alt="menu" />
           </div>
@@ -72,13 +84,15 @@ const HeaderWrap = styled.section`
     width: 1280px;
     height: 85px;
   }
+  h2 {
+    font-size: 34px;
+    color: red;
+    font-weight: 700;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+  }
 `;
-const LOGO = styled.img`
-  width: 200px;
-  height: 150px;
-  margin-top: 20px;
-  cursor: pointer;
-`;
+
 const CategoryWrap = styled.ul`
   ${({ theme }) => theme.flexSB}
   position: relative;

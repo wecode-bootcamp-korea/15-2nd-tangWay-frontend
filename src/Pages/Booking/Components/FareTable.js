@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const FareTable = () => {
+const FareTable = ({ choose }) => {
+  console.log(choose);
   return (
     <Wrapper>
       <table>
@@ -15,10 +16,10 @@ const FareTable = () => {
         </thead>
         <tbody>
           <tr>
-            <td>KRW 19,800</td>
+            <td>KRW {(choose.first.ticket.price + choose.second.ticket.price).toLocaleString()}</td>
             <td>KRW 0</td>
             <td>KRW 8,000</td>
-            <td>KRW 27,800</td>
+            <td>KRW {(choose.first.ticket.price + choose.second.ticket.price + 8000).toLocaleString()}</td>
           </tr>
         </tbody>
       </table>

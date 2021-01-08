@@ -1,9 +1,11 @@
 import React from "react";
+import { useHistory } from "react-router";
 import styled from "styled-components";
 import theme from "../../../Styles/theme";
 import { ICONSARR } from "../Data/AgreementData";
 
 export default function Form(props) {
+  const history = useHistory();
   return (
     <Layout id="SignUpPage">
       <TopItemsContainer>
@@ -23,7 +25,7 @@ export default function Form(props) {
       </TopItemsContainer>
       {props.children}
       <BottomContainer>
-        <NextBtn>다음</NextBtn>
+        <NextBtn onClick={() => history.push("/signup")}>다음</NextBtn>
       </BottomContainer>
     </Layout>
   );

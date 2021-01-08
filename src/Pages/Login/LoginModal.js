@@ -16,9 +16,9 @@ function LoginModal({ modalState, setModalState }) {
 const ModalWrapper = styled.div`
   width: 560px;
   position: fixed;
-  top: 150px;
-  left: 600px;
-  z-index: 2;
+  top: 350px;
+  left: 700px;
+  z-index: 200;
   display: ${(props) => (props.modalState ? "block" : "none")};
   border: 1px solid black;
   background-color: #ffffff;
@@ -30,7 +30,7 @@ const ModalOverlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
+  z-index: 199;
   display: ${(props) => (props.modalState ? "block" : "none")};
   background-color: rgba(0, 0, 0, 0.4);
 `;

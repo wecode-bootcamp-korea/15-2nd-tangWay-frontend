@@ -1,7 +1,31 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import moment from "moment";
 import styled from "styled-components";
 
-const ReservationDetail = ({ item }) => {
+const ReservationDetail = ({ item, choose }) => {
+  const bookingInfo = useSelector((store) => store.bookingReducer);
+
+  const diffTimes = (start, end) => {
+    const HOUR = 60;
+    const [s_h, s_m] = start.split(":");
+    const [e_h, e_m] = end.split(":");
+
+    const s = moment();
+    const e = moment();
+
+    s.hour(+s_h);
+    s.minute(+s_m);
+    e.hour(+e_h);
+    e.minute(+e_m);
+
+    const res = e.diff(s, "minute") / HOUR;
+    const diffHour = Math.floor(res);
+    const diffMinute = res - diffHour;
+
+    return "0" + diffHour + "h" + " " + diffMinute * HOUR + "m";
+  };
+
   return (
     <li>
       <Bar>
@@ -10,27 +34,33 @@ const ReservationDetail = ({ item }) => {
       </Bar>
       <Detail>
         <Date>
-          <span>2021-01-18(월)</span>
+          <span>
+            {item.section === "구간1"
+              ? bookingInfo.startDate?.format("YYYY-MM-DD")
+              : bookingInfo.endDate?.format("YYYY-MM-DD")}
+          </span>
         </Date>
         <Info>
           <Departure>
-            <strong>GMP</strong>
-            <span>서울/김포</span>
+            <strong>{choose.ticket.depart_english_name}</strong>
+            <span>{item.section === "구간1" ? bookingInfo.departure : bookingInfo.destination}</span>
           </Departure>
           <Exp>
             <div>
-              <span>06:40 ~ 07:50 / </span>
-              <span>01h 10m</span>
+              <span>
+                {choose.ticket.depart_time} ~ {choose.ticket.arrive_time} /{" "}
+              </span>
+              <span>{diffTimes(choose.ticket.depart_time, choose.ticket.arrive_time)}</span>
             </div>
             <img src="http://contents-image.twayair.com/homepage/images/booking/bg_service_exp.png" alt="bg_service" />
             <div>
-              <span>TW701 |</span>
-              <span> 직항</span>
+              <span>{choose.ticket.airplane_name} |</span>
+              <span> {choose.ticket.path_type}</span>
             </div>
           </Exp>
           <Arrival>
-            <strong>CJU</strong>
-            <span>제주</span>
+            <strong>{choose.ticket.arrive_english_name}</strong>
+            <span>{item.section === "구간2" ? bookingInfo.departure : bookingInfo.destination}</span>
           </Arrival>
         </Info>
       </Detail>

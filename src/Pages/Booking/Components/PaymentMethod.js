@@ -57,6 +57,7 @@ export default PaymentMethod;
 
 const Wrapper = styled.div`
   padding: 40px 40px 30px 40px;
+  margin-bottom: 60px;
   border: 1px solid #ccc;
 `;
 

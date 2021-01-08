@@ -4,14 +4,14 @@ import FareTable from "./Components/FareTable";
 import PaymentMethod from "./Components/PaymentMethod";
 import SectionInfo from "./Components/SectionInfo";
 
-const Payment = () => {
+const Payment = ({ choose }) => {
   return (
     <Wrapper>
-      <SectionInfo />
+      <SectionInfo choose={choose} />
       <FareInformationTitle>
         <h3>운임 정보</h3>
       </FareInformationTitle>
-      <FareTable />
+      <FareTable choose={choose} />
       <PaymentMethodTitle>
         <h3>결제 수단</h3>
       </PaymentMethodTitle>
