@@ -91,9 +91,7 @@
 # Back-End 🤞
 
 ## 초기세팅 & 모델링 (ERD)
-
-![](https://www.notion.so/3cc92e017f3d4b53afb7cd4d211435ed#fcfe6b9161194ea68336d1ded52957e1)
-
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f4d4a95-de7a-4540-aba8-8d572e28773a/_2021-01-08_17-24-00.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f4d4a95-de7a-4540-aba8-8d572e28773a/_2021-01-08_17-24-00.png)
 
 ## 회원가입 & 로그인 API
 
